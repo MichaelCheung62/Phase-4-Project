@@ -8,9 +8,9 @@ function Header({ user, onLogout }) {
   }
   return (
     <header>
-      <h1>
-        <Link to="/">Nai Chai</Link>
-      </h1>
+      <div id="heading">
+        <Link to="/">NAI CHAI</Link>
+      </div>
       {user ? (
         <div>
           <div>
@@ -26,7 +26,7 @@ function Header({ user, onLogout }) {
           </div>
         </div>
       ) : (
-        <Link to="/login">Click Here to Login</Link>
+        <Link id="login" to="/login">Click Here to Login</Link>
       )}
     </header>
   );

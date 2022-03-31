@@ -23,6 +23,7 @@ function Login({ user, onLogin }) {
         <Redirect to="/" />
       ) : (
         <form onSubmit={handleSubmit}>
+          <label>User Name:</label>
           <input
             type="text"
             value={username}

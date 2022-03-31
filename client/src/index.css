@@ -17,3 +17,9 @@ code {
   height: auto;
   width: 80%;
 }
+
+#heading{
+  font-size: 50px;
+  font-family: Merlin;
+  font-style: bold;
+}

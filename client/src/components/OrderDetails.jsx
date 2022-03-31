@@ -62,7 +62,7 @@ function OrderDetails() {
         )}
       </div>
       {order.drinks.map((drinkOrder, index) => (
-        <div key={index}>
+        <div key={index} id="card">
           {drinkOrder.drink.name} - ${drinkOrder.drink.price}
           <button onClick={() => deleteDrink(drinkOrder.id)}>Remove</button>
         </div>
