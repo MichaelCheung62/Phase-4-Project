@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
+import {Redirect} from 'react-router-dom'
 import DrinkList from './DrinkList';
 
-function Home() {
+function Home({user}) {
   const [drinks, setDrinks] = useState([]);
   const [drinkOrders, setDrinkOrders] = useState([]);
   const [customer, setCustomer] = useState('');
@@ -42,11 +43,15 @@ function Home() {
       }),
     });
   };
+
+  if (!user) return <Redirect to='/' />
+
   return (
     <div>
       <input onChange={(e) => setCustomer(e.target.value)}></input>
       <DrinkList drinks={drinks} addDrinkToOrder={addDrinkToOrder} />
       <button onClick={submitOrder}>Create Order</button>
+      
     </div>
   );
 }

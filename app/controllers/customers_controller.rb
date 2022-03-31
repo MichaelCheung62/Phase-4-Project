@@ -11,6 +11,12 @@ rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_resp
     render json: customer, status: :created
    end
 
+   def destroy
+    customer = Customer.find(params[:id])
+    customer.destroy
+    head :no_content
+end
+
 
    private
 

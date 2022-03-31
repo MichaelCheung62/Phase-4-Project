@@ -5,6 +5,9 @@ import { Switch, Route, BrowserRouter as Router } from 'react-router-dom';
 import Login from './components/Login';
 import Header from './components/Header';
 import Home from './components/Home';
+import OrderList from './components/OrderList';
+import OrderDetails from './components/OrderDetails';
+import Menu from './components/Menu';
 
 function App() {
   const [user, setUser] = useState(null);
@@ -35,6 +38,15 @@ function App() {
           </Route>
           <Route exact path="/">
             <Home user={user} />
+          </Route>
+          <Route exact path="/orders">
+            <OrderList />
+          </Route>
+          <Route exact path="/menu">
+            <Menu />
+          </Route>
+          <Route exact path="/orders/:id">
+            <OrderDetails />
           </Route>
           <Route exact path="logout"></Route>
         </Switch>
